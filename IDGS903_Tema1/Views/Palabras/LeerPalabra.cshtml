@@ -1,0 +1,33 @@
+﻿
+<h2>Diccionario</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Español</th>
+            <th>Inglés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (string item in ViewBag.Palabras)
+        {
+            <tr>
+                @foreach (string datos in item.Split(' '))
+                {
+                    <td>@datos</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <a href="~/Palabras/Traductor" type="button" class="btn btn-default btn btn-outline-primary"> Traductor </a>
+        <a href="~/Palabras/Registrar" type="button" class="btn btn-default btn btn-outline-secondary"> Registrar Palabra </a>
+
+    </div>
+
+
+</div>

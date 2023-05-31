@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Calculadora de Sumas";
+}
+
+<h2>Calculadora</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="@Url.Action("Calculos", "Nuevo2")" method="post">
+                <label for="n1">Número 1:</label>
+                <input type="text" id="n1" name="n1" /><br /><br />
+                <label for="n2">Número 2:</label>
+                <input type="text" id="n2" name="n2" /><br /><br />
+                <label for="operacion">Operación:</label>
+                <input type="radio" id="suma" name="operacion" value="suma">
+                <label for="suma">Suma</label>
+                <input type="radio" id="resta" name="operacion" value="resta">
+                <label for="resta">Resta</label>
+                <input type="radio" id="multiplicacion" name="operacion" value="multiplicacion">
+                <label for="multiplicacion">Multiplicación</label>
+                <input type="radio" id="division" name="operacion" value="division">
+                <label for="division">División</label><br /><br />
+                <input type="submit" value="Calcular" />
+            </form>
+
+        </div>
+    </div>
+    
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Resultado:</h3>
+                <p>@ViewBag.Resultado</p>
+            </div>
+        </div>
+    
+</div>

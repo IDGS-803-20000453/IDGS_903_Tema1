@@ -1,0 +1,43 @@
+﻿@model IDGS903_Tema1.Models.Diccionario
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Diccionario</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label>Ingles</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PalabraEspañol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PalabraEspañol, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Español</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PalabraIngles, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PalabraIngles, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Registrar" class="btn btn-default" />
+            </div>
+
+            <div class="col-md-offset-2 col-md-4">
+                <a href="~/Palabras/LeerPalabra" type="button" class="btn btn-default btn btn-secondary"> Mostrar </a>
+                <a href="~/Palabras/Traductor" type="button" class="btn btn-default btn btn-outline-primary"> Traductor </a>
+
+            </div>
+
+           
+
+        </div>
+    </div>
+}
+
